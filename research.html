@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research - City Institute of Higher Learning</title>
+    <style>
+        /* Same base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        img {
+            max-width: 100%;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #f5f5f5;
+            font-weight: bold;
+        }
+    </style>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="main-nav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <h2>C-IHL</h2>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="programmes.html">Programmes</a></li>
+                    <li><a href="research.html" class="active">Research</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="career.html">Career</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="partnerships.html">Partnerships</a></li>
+                </ul>
+                <div class="language-selector">
+                    <select id="language-select">
+                        <option value="en">English</option>
+                        <option value="fr">Français</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Research Collage -->
+    <section class="collage-section">
+        <div class="container">
+            <div class="collage-grid">
+                <div class="collage-item">
+                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Research lab">
+                </div>
+                <div class="collage-item">
+                    <img src="https://images.unsplash.com/photo-1554475900-0e035a93c8a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Academic research">
+                </div>
+                <div class="collage-item">
+                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Data analysis">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Hero -->
+    <section class="research-hero">
+        <div class="container">
+            <h1>Research at C-IHL</h1>
+            <p>At City Institute of Higher Learning (C-IHL), our faculty and visiting professors are not only dedicated educators but also prolific researchers whose scholarly contributions significantly enhance our academic prestige. This page is dedicated to showcasing the diverse range of publications authored by our esteemed faculty, including books, peer-reviewed articles, conference papers, and more, across various disciplines.</p>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section class="publications-section">
+        <div class="container">
+            <h2>Publications of Faculty and Visiting Professors</h2>
+            
+            <div class="search-box">
+                <input type="text" id="publication-search" placeholder="Type Here To Search..." onkeyup="searchPublications()">
+            </div>
+
+            <div class="publications-table">
+                <table id="publications-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Our Faculty and Visiting Professors</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Professor Dieu Hack-Polay, Director of Research</td>
+                            <td><a href="https://scholar.google.com/citations?hl=en&user=5Tq-FW8AAAAJ" target="_blank">View Profile</a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Professor Mahfuzur Rahman, Visiting Professor</td>
+                            <td><a href="https://scholar.google.com/citations?hl=en&user=uNTM1soAAAAJ" target="_blank">View Profile</a></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Dr. Asadul Islam, Visiting Professor</td>
+                            <td><a href="https://scholar.google.com/citations?hl=en&user=CHf4PNQAAAAJ" target="_blank">View Profile</a></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Professor Francesca Dal Mas, Visiting Professor</td>
+                            <td><a href="https://scholar.google.com/citations?user=5jjn1OEAAAAJ&hl=en" target="_blank">View Profile</a></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Professor Maria Kordowicz</td>
+                            <td><a href="https://scholar.google.com/citations?user=eX3YLEUAAAAJ&hl=en" target="_blank">View Profile</a></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Professor P. Mary Jeyanthi</td>
+                            <td><a href="https://scholar.google.com/citations?user=xLi6R7wAAAAJ&hl=en" target="_blank">View Profile</a></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Associate Professor Shehnaz Tehseen</td>
+                            <td><a href="https://scholar.google.com/citations?user=P58sT8oAAAAJ&hl=en" target="_blank">View Profile</a></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Dr. Chrisben Fiifi Daniels</td>
+                            <td><a href="https://scholar.google.ca/citations?user=CVq9MYIAAAAJ&hl" target="_blank">View Profile</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="table-info">
+                    <p>Showing 1 to 8 of 8 Entries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>C-IHL</h3>
+                    <p>City Institute of Higher Learning (C-IHL) is an advanced research-focused education institute in New Brunswick, Canada.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Programmes</h4>
+                    <ul>
+                        <li><a href="#">Academic Diplomas</a></li>
+                        <li><a href="#">Executive Education</a></li>
+                        <li><a href="#">Community Programmes</a></li>
+                        <li><a href="#">Consulting Services</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#">Student Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>+1 506 388 2833</li>
+                        <li>admin@city-ihl.ca</li>
+                        <li>Moncton, New Brunswick</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 City Institute of Higher Learning</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language selector
+        document.getElementById('language-select').addEventListener('change', function() {
+            const selectedLanguage = this.value;
+            console.log('Language changed to:', selectedLanguage);
+        });
+
+        // Search functionality for publications
+        function searchPublications() {
+            const input = document.getElementById('publication-search');
+            const filter = input.value.toLowerCase();
+            const table = document.getElementById('publications-table');
+            const tr = table.getElementsByTagName('tr');
+
+            for (let i = 1; i < tr.length; i++) {
+                const td = tr[i].getElementsByTagName('td')[1];
+                if (td) {
+                    const txtValue = td.textContent || td.innerText;
+                    if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                        tr[i].style.display = '';
+                    } else {
+                        tr[i].style.display = 'none';
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

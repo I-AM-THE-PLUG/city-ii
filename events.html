@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - City Institute of Higher Learning</title>
+    <style>
+        /* Same base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        img {
+            max-width: 100%;
+        }
+        
+        .events-search {
+            margin: 30px 0;
+        }
+        
+        .search-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .search-box input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .search-box button {
+            padding: 10px 20px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .events-navigation {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .events-navigation button {
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .events-navigation button.active {
+            background: #333;
+            color: white;
+        }
+        
+        .event-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 20px;
+        }
+        
+        .event-date {
+            background: #f8f8f8;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 80px;
+        }
+        
+        .event-date .month {
+            font-weight: bold;
+            display: block;
+            font-size: 1.1em;
+        }
+        
+        .event-date .day {
+            font-size: 1.5em;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .event-content {
+            flex: 1;
+        }
+        
+        .event-tag {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            margin-left: 10px;
+        }
+        
+        .no-events {
+            text-align: center;
+            padding: 40px;
+            background: #f8f8f8;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+    </style>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="main-nav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <h2>C-IHL</h2>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="programmes.html">Programmes</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="career.html">Career</a></li>
+                    <li><a href="events.html" class="active">Events</a></li>
+                    <li><a href="partnerships.html">Partnerships</a></li>
+                </ul>
+                <div class="language-selector">
+                    <select id="language-select">
+                        <option value="en">English</option>
+                        <option value="fr">Français</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Events Header -->
+    <section class="events-header">
+        <div class="container">
+            <h1>Events at C-IHL</h1>
+            <p>Join our vibrant campus community through engaging events, workshops, and cultural activities.</p>
+        </div>
+    </section>
+
+    <!-- Events Search and Navigation -->
+    <section class="events-search">
+        <div class="container">
+            <h2>Events Search and Views Navigation</h2>
+            
+            <div class="search-box">
+                <input type="text" id="event-search" placeholder="Enter Keyword. Search for Events by Keyword.">
+                <button onclick="searchEvents()">Search for events</button>
+            </div>
+            
+            <div class="events-navigation">
+                <button class="active" onclick="showView('list')">List</button>
+                <button onclick="showView('month')">Month</button>
+                <button onclick="showView('day')">Day</button>
+                <button onclick="showToday()">Today</button>
+                <input type="date" id="date-selector" onchange="selectDate(this.value)">
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Events Message -->
+    <section class="current-events">
+        <div class="container">
+            <div class="no-events">
+                <h3>There are no upcoming events.</h3>
+                <p>Check back later for new events and activities.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Past Events -->
+    <section class="past-events">
+        <div class="container">
+            <h2>Latest Past Events</h2>
+            
+            <!-- Event 1 -->
+            <div class="event-card">
+                <div class="event-date">
+                    <span class="month">MAY</span>
+                    <span class="day">15</span>
+                </div>
+                <div class="event-content">
+                    <h3>2nd Conference on Economic Growth in Atlantic Canada</h3>
+                    <p><strong>Date:</strong> May 15 @ 8:00 am - May 17 @ 5:00 pm</p>
+                    <p><strong>Location:</strong> Hotel Wingate 69 Rue du Marché, Dieppe</p>
+                    <p>🎤 Experience the Future of Innovation! Join us from May 15–17, 2025, in Dieppe, New Brunswick, for the 2nd Conference on Economic Growth in Atlantic Canada. This year's theme, "Innovation Hubs: Fostering Entrepreneurship and Global Cooperation", brings together business leaders, researchers, and policymakers to explore new opportunities for collaboration and growth. Connect with experts through keynotes, workshops, and networking sessions. Let's spark ideas that shape the future!</p>
+                    <p><strong>Register now:</strong> city-ihl.ca</p>
+                    <p><strong>Contact:</strong> 📞 +1 506 388 2833 | 📧 admin@city-ihl.ca</p>
+                </div>
+            </div>
+
+            <!-- Event 2 -->
+            <div class="event-card">
+                <div class="event-date">
+                    <span class="month">DEC</span>
+                    <span class="day">12</span>
+                </div>
+                <div class="event-content">
+                    <h3>Session d'Information en Collaboration avec AIAC-NB</h3>
+                    <span class="event-tag">free</span>
+                    <p><strong>Date:</strong> December 12, 2024 @ 6:00 pm - 7:00 pm</p>
+                    <p><strong>Location:</strong> Association Initiatives Afro-Canadiennes du Nouveau Brunswick (AIAC-NB)</p>
+                    <p>Vous souhaitez en savoir plus sur nos programmes académiques et les opportunités qu'ils offrent ? Rejoignez-nous pour une session d'information spéciale, organisée en collaboration avec l'Association Initiatives Afro-Canadiennes du Nouveau-Brunswick (AIAC- NB). Pourquoi participer ? ✅ Découvrez nos diplômes et certifications adaptés aux besoins actuels. ✅ Posez vos questions et échangez directement avec nos experts. ✅ Explorez comment nos formations peuvent booster votre carrière.</p>
+                    <p><strong>Date:</strong> 12 Décembre</p>
+                    <p><strong>Heure:</strong> 18h00 -19h00</p>
+                    <p><strong>Lieu:</strong> meet.google.com/mun-wxbs-eib</p>
+                    <p>Ne manquez pas cette occasion unique de découvrir des programmes conçus pour vous !</p>
+                </div>
+            </div>
+
+            <!-- Event 3 -->
+            <div class="event-card">
+                <div class="event-date">
+                    <span class="month">DEC</span>
+                    <span class="day">09</span>
+                </div>
+                <div class="event-content">
+                    <h3>Session d'Information en Collaboration avec AIAC-NB</h3>
+                    <span class="event-tag">free</span>
+                    <p><strong>Date:</strong> December 9, 2024 @ 12:00 pm - 1:00 pm</p>
+                    <p><strong>Location:</strong> Association Initiatives Afro-Canadiennes du Nouveau Brunswick (AIAC-NB)</p>
+                    <p>Vous souhaitez en savoir plus sur nos programmes académiques et les opportunités qu'ils offrent ? Rejoignez-nous pour une session d'information spéciale, organisée en collaboration avec l'Association Initiatives Afro-Canadiennes du Nouveau-Brunswick (AIAC- NB). Pourquoi participer ? ✅ Découvrez nos diplômes et certifications adaptés aux besoins actuels. ✅ Posez vos questions et échangez directement avec nos experts. ✅ Explorez comment nos formations peuvent booster votre carrière.</p>
+                    <p><strong>Date:</strong> 9 Décembre</p>
+                    <p><strong>Heure:</strong> 12h00 -13h00</p>
+                    <p><strong>Lieu:</strong> meet.google.com/yut-qnwb-pes</p>
+                    <p>Ne manquez pas cette occasion unique de découvrir des programmes conçus pour vous !</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>C-IHL</h3>
+                    <p>City Institute of Higher Learning (C-IHL) is an advanced research-focused education institute in New Brunswick, Canada.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Programmes</h4>
+                    <ul>
+                        <li><a href="#">Academic Diplomas</a></li>
+                        <li><a href="#">Executive Education</a></li>
+                        <li><a href="#">Community Programmes</a></li>
+                        <li><a href="#">Consulting Services</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#">Student Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>+1 506 388 2833</li>
+                        <li>admin@city-ihl.ca</li>
+                        <li>Moncton, New Brunswick</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 City Institute of Higher Learning</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language selector
+        document.getElementById('language-select').addEventListener('change', function() {
+            const selectedLanguage = this.value;
+            console.log('Language changed to:', selectedLanguage);
+        });
+
+        // Events functionality
+        function searchEvents() {
+            const searchTerm = document.getElementById('event-search').value.toLowerCase();
+            const events = document.querySelectorAll('.event-card');
+            let found = false;
+
+            events.forEach(event => {
+                const text = event.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    event.style.display = 'flex';
+                    found = true;
+                } else {
+                    event.style.display = 'none';
+                }
+            });
+
+            // Show/hide no events message
+            const noEvents = document.querySelector('.no-events');
+            if (found || searchTerm === '') {
+                noEvents.style.display = 'none';
+            } else {
+                noEvents.style.display = 'block';
+            }
+        }
+
+        function showView(viewType) {
+            // Update navigation buttons
+            const buttons = document.querySelectorAll('.events-navigation button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // In a real implementation, this would switch between list, month, and day views
+            console.log('Switching to view:', viewType);
+        }
+
+        function showToday() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('date-selector').value = today;
+            selectDate(today);
+        }
+
+        function selectDate(date) {
+            console.log('Selected date:', date);
+            // In a real implementation, this would filter events by the selected date
+        }
+
+        // Set today's date in the date selector
+        document.getElementById('date-selector').value = new Date().toISOString().split('T')[0];
+    </script>
+</body>
+</html>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - City Institute of Higher Learning</title>
+    <style>
+        /* Same base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        
+        .personnel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .personnel-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .personnel-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 15px;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 10px;
+        }
+        
+        .pagination button {
+            padding: 10px 20px;
+            border: none;
+            background: #f0f0f0;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .pagination button.active {
+            background: #333;
+            color: white;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #ddd;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="main-nav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <h2>C-IHL</h2>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="programmes.html">Programmes</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="career.html">Career</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="partnerships.html">Partnerships</a></li>
+                </ul>
+                <div class="language-selector">
+                    <select id="language-select">
+                        <option value="en">English</option>
+                        <option value="fr">Français</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Collage -->
+    <section class="collage-section">
+        <div class="container">
+            <div class="collage-grid">
+                <div class="collage-item">
+                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Campus exterior">
+                </div>
+                <div class="collage-item">
+                    <img src="https://images.unsplash.com/photo-1541336032412-2048a678540d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Student life">
+                </div>
+                <div class="collage-item">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Academic building">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Hero -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>About City Institute of Higher Learning</h1>
+            <p>At City Institute of Higher Learning (CIHL), we pride ourselves on fostering an environment of academic excellence and innovation. Established in 2013, CIHL has quickly become a beacon of learning in Moncton, embracing both local and those studying virtually from abroad. Our mission is to equip students with the critical thinking and professional skills needed to excel in a globalized world.</p>
+            <p>City Institute of Higher Learning (C-IHL) is an advanced research-focused education institute in New Brunswick, Canada, that serves the needs of the research community and businesses. C-IHL is part of the Institute of International Education Canada (IEC) Inc., founded in 2013. The Institute is a significant place for scholarly research and business consultancy covering contemporary global issues. C-IHL focuses primarily on advanced research and management learning. We aim to produce graduates who are equipped with exceptional skills to serve local and international development needs. Most of our research, courses and consultancy activities can be taken in English and French. We are one of the few private institutes that offer this flexibility.</p>
+        </div>
+    </section>
+
+    <!-- Mission, Vision, Values -->
+    <section class="mission-section">
+        <div class="container">
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <h3>Our Mission</h3>
+                    <p>To serve our diverse and dynamic community by providing high-quality educational programs that combine rigorous academic standards with real-world experience. We aim to nurture and develop the leaders of tomorrow, ensuring they are prepared for the challenges and opportunities that lie ahead.</p>
+                </div>
+                <div class="mission-card">
+                    <h3>Our Vision</h3>
+                    <p>To be recognized as a leader in global education, known for our commitment to student success, research excellence, and community engagement. We strive to create an inclusive, innovative, and inspiring learning environment that promotes lifelong learning.</p>
+                </div>
+                <div class="mission-card">
+                    <h3>Our Values</h3>
+                    <ul>
+                        <li><strong>Integrity:</strong> Upholding the highest standards of honesty and ethical behavior.</li>
+                        <li><strong>Innovation:</strong> Encouraging creativity and innovation in all our endeavors.</li>
+                        <li><strong>Inclusivity:</strong> Embracing diversity and ensuring equal opportunities for all.</li>
+                        <li><strong>Excellence:</strong> Striving for excellence in every aspect of our operations.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Institute Timeline -->
+    <section class="timeline-section">
+        <div class="container">
+            <h2>Institute Timeline</h2>
+            <p class="section-intro">Each phase of our history reflects our ongoing commitment to adapt and respond to the educational needs and aspirations of our community, continually striving to offer more relevant, impactful, and accessible education.</p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>2013</h3>
+                        <h4>Company Established</h4>
+                        <p>From Institute of Chinese & Asian Research (ICAR)</p>
+                        <p>In the early years, our journey began as the Institute of Chinese & Asian Research (ICAR), a hub dedicated to enhancing understanding and collaboration through focused research on Chinese and Asian studies. This period marked our initial commitment to fostering international ties and understanding through education.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>2015</h3>
+                        <h4>Institute of International Education Canada (IEC)</h4>
+                        <p>As our scope expanded and our mission evolved to include a broader global perspective, we transitioned to the Institute of International Education Canada (IEC). This name change reflected our growing emphasis on offering a diverse range of international educational programs and our dedication to creating global opportunities for our students.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>2024</h3>
+                        <h4>City Institute of Higher Learning (C-IHL)</h4>
+                        <p>In 2024, we embraced a new identity as the City Institute of Higher Learning (C-IHL), signifying a comprehensive approach to higher education that merges research, practical knowledge, and innovative learning strategies. This name encapsulates our commitment to providing top-tier education that prepares students for success in a rapidly changing global landscape. At C-IHL, we continue to build on our foundation of research excellence and community engagement, while adapting to the ever-evolving educational needs of our students around the world.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personnel Section -->
+    <section class="personnel-section">
+        <div class="container">
+            <h2>Our Team</h2>
+            <p class="section-intro">At City Institute of Higher Learning (C-IHL), we are proud of our dedicated and diverse team of professionals at the core of our success. Our faculty and staff bring a wealth of knowledge, experience, and passion to their roles, ensuring that we provide our students with the highest standard of education and support.</p>
+            
+            <h3>Faculty: Expert Educators and Innovators</h3>
+            <p>Our faculty consists of highly qualified educators and researchers from around the world, each bringing their unique expertise and perspectives to our academic programs. They are not only leaders in their respective fields but also committed mentors who foster a nurturing and stimulating learning environment.</p>
+
+            <!-- Faculty Page 1 -->
+            <div class="personnel-page active" id="page-1">
+                <div class="personnel-grid">
+                    <div class="personnel-card">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Dieu Hack-Polay" class="personnel-image">
+                        <h4>Dieu Hack-Polay, PhD</h4>
+                        <p>Founder</p>
+                        <p>dhackpolay@city-ihl.ca</p>
+                        <a href="bio-hack-polay.html" class="cta-button">About Me</a>
+                    </div>
+                    <div class="personnel-card">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Dr. Appiah-Kubi Clement" class="personnel-image">
+                        <h4>Dr. Appiah-Kubi Clement</h4>
+                        <p>Director of School of Social Science and Research and Director Academic Affairs</p>
+                        <p>appiah-kubi@city-ihl.ca</p>
+                    </div>
+                    <div class="personnel-card">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Chunming Tai" class="personnel-image">
+                        <h4>Chunming Tai, PhD</h4>
+                        <p>Associate Professor and Education Consultant</p>
+                        <p>cmtai@city-ihl.ca</p>
+                    </div>
+                    <div class="personnel-card">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Olivia Gordon" class="personnel-image">
+                        <h4>Olivia Gordon, MA</h4>
+                        <p>Assistant Professor</p>
+                        <p>ogordon@city-ihl.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Faculty Page 2 -->
+            <div class="personnel-page" id="page-2">
+                <div class="personnel-grid">
+                    <div class="personnel-card">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Veronica Vaca" class="personnel-image">
+                        <h4>Veronica Vaca, MM</h4>
+                        <p>Assistant Professor</p>
+                        <p>vvaca@city-ihl.ca</p>
+                    </div>
+                    <div class="personnel-card">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Mahfuzur Rahman" class="personnel-image">
+                        <h4>Mahfuzur Rahman, PhD</h4>
+                        <p>Visiting Professor</p>
+                        <p>mrahman@city-ihl.com</p>
+                    </div>
+                    <div class="personnel-card">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Mojde Eghbalpour" class="personnel-image">
+                        <h4>Mojde Eghbalpour, PhD</h4>
+                        <p>Assistant Professor</p>
+                        <p>meghbalpour@city-ihl.com</p>
+                    </div>
+                    <div class="personnel-card">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Chrisben Daniels" class="personnel-image">
+                        <h4>Chrisben Daniels, PhD</h4>
+                        <p>Postdoctoral Fellow</p>
+                        <p>cdaniels@city-ihl.ca</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="page-btn active" onclick="showPage(1)">1</button>
+                <button class="page-btn" onclick="showPage(2)">2</button>
+                <button class="page-btn" onclick="showPage(3)">3</button>
+                <button class="page-btn" onclick="showPage(4)">4</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Administrative Staff -->
+    <section class="admin-section">
+        <div class="container">
+            <h3>Administrative Staff</h3>
+            <p>Our administrative team ensures the smooth operation of our institute. From academic administration to student services, they are here to support our faculty and students, ensuring that all aspects of academic life run seamlessly.</p>
+            
+            <div class="personnel-grid">
+                <div class="personnel-card">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Anna Hack-Polay" class="personnel-image">
+                    <h4>Anna Hack-Polay</h4>
+                    <p>Accommodation Officer</p>
+                    <p>admin@city-ihl.ca</p>
+                </div>
+                <div class="personnel-card">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Amina Djafer" class="personnel-image">
+                    <h4>Amina Djafer</h4>
+                    <p>Partnerships Coordinator</p>
+                    <p>adjafer@city-ihl.ca</p>
+                </div>
+                <div class="personnel-card">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Yasmina Dries" class="personnel-image">
+                    <h4>Yasmina Dries</h4>
+                    <p>Administrative & Students Coordinator</p>
+                    <p>ydries@city-ihl.ca</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Connectors -->
+    <section class="connectors-section">
+        <div class="container">
+            <h3>Our Global Connectors and Representatives</h3>
+            <p>C-IHL has a network of representatives across the globe. These individuals play a crucial role in liaising with prospective students and partners, providing essential information and facilitating international collaborations.</p>
+            
+            <div class="personnel-grid">
+                <div class="personnel-card">
+                    <h4>Karen Tanui</h4>
+                    <p>Kenya Representative</p>
+                    <p>#CIHL-GLR004</p>
+                    <p>karen-cihl-glr004@city-ihl.com</p>
+                </div>
+                <div class="personnel-card">
+                    <h4>Kate Smith-Palmer</h4>
+                    <p>Partnership Development (Jamaica & Caribbean)</p>
+                    <p>#CIHL-GLR003</p>
+                    <p>kate-cihl-glr003@city-ihl.com</p>
+                </div>
+                <div class="personnel-card">
+                    <h4>Célestin Couloud</h4>
+                    <p>Représentant en Côte d'Ivoire</p>
+                    <p>#CIHL-GLR005</p>
+                    <p>celestin-cihl-glr005@city-ihl.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Our Team -->
+    <section class="join-team-section">
+        <div class="container">
+            <div class="join-team-content">
+                <h3>Join Our Team</h3>
+                <p>Interested in becoming part of a vibrant educational community? We're always looking for passionate individuals to join our team. Check out our current job openings and volunteer opportunities.</p>
+                <a href="career.html" class="cta-button">View Career Opportunities</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>C-IHL</h3>
+                    <p>City Institute of Higher Learning (C-IHL) is an advanced research-focused education institute in New Brunswick, Canada.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Programmes</h4>
+                    <ul>
+                        <li><a href="#">Academic Diplomas</a></li>
+                        <li><a href="#">Executive Education</a></li>
+                        <li><a href="#">Community Programmes</a></li>
+                        <li><a href="#">Consulting Services</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#">Student Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>+1 506 388 2833</li>
+                        <li>admin@city-ihl.ca</li>
+                        <li>Moncton, New Brunswick</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 City Institute of Higher Learning</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language selector
+        document.getElementById('language-select').addEventListener('change', function() {
+            const selectedLanguage = this.value;
+            console.log('Language changed to:', selectedLanguage);
+        });
+
+        // Personnel pagination
+        function showPage(pageNumber) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.personnel-page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show selected page
+            document.getElementById(`page-${pageNumber}`).classList.add('active');
+            
+            // Update pagination buttons
+            const buttons = document.querySelectorAll('.page-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            buttons[pageNumber - 1].classList.add('active');
+        }
+    </script>
+</body>
+</html>
